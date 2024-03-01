@@ -3,7 +3,11 @@ import { connect, StringCodec, Subscription } from "nats";
 async function main() {
   // create a connection
   // const nc = await connect({ servers: "demo.nats.io" });
-  const nc = await connect({ servers: "localhost", user: "userB", pass: "passB" });
+  const nc = await connect({
+    servers: "localhost",
+    user: "userB",
+    pass: "passB",
+  });
 
   // create a codec
   const sc = StringCodec();
@@ -13,6 +17,7 @@ async function main() {
   (async (sub: Subscription) => {
     console.log(`listening for ${sub.getSubject()} requests...`);
     for await (const m of sub) {
+      console.log("headers ", m.headers?.keys.length);
       if (m.respond(sc.encode(new Date().toISOString()))) {
         console.info(`[time] handled #${sub.getProcessed()}`);
       } else {
