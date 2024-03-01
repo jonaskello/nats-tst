@@ -17,8 +17,7 @@ async function main() {
   (async (sub: Subscription) => {
     console.log(`listening for ${sub.getSubject()} requests...`);
     for await (const m of sub) {
-      console.log("headers ", m.headers?.keys.length);
-      console.log("the header", m.headers?.get("Nats-Request-Info"));
+      console.log("Nats-Request-Info", m.headers?.get("Nats-Request-Info"));
       if (m.respond(sc.encode(new Date().toISOString()))) {
         console.info(`[time] handled #${sub.getProcessed()}`);
       } else {
