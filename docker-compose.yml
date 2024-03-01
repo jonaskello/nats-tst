@@ -2,8 +2,11 @@ version: "3.8"
 
 services:
   nats:
-    image: nats:2.7.4
+    image: nats:2.10.10-alpine
     ports:
-      - "4222:4222"
-      - "6222:6222"
-      - "8222:8222"
+      - "4222:4222" # clients
+      - "6222:6222" # routing port for clustering
+      - "8222:8222" # HTTP management port for information reporting
+      - "9222:9222" # websockets
+    volumes:
+      - ./docker-compose-nats.conf:/etc/nats/nats-server.conf

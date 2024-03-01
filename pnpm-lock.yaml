@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   nats:
-    specifier: ^2.6.1
-    version: 2.18.0
+    specifier: ^2.19.0
+    version: 2.19.0
 
 devDependencies:
   ts-node:
@@ -92,8 +92,8 @@ packages:
     resolution: {integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==}
     dev: true
 
-  /nats@2.18.0:
-    resolution: {integrity: sha512-zZF004ejzf67Za0Tva+xphxoxBMNc5IMLqbZ7Ho0j9TMuisjpo+qCd1EktXRCLNxmrZ8O6Tbm1dBsZYNF6yR1A==}
+  /nats@2.19.0:
+    resolution: {integrity: sha512-TuOAqPljCRpfHPo2o3midezchqYJUOOnK/YLmYf9rdoshzlYN1xvCd9dAKveVB6Bfubp/m63eN3l3ukfn43JOg==}
     engines: {node: '>= 14.0.0'}
     dependencies:
       nkeys.js: 1.0.5
