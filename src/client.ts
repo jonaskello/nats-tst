@@ -3,7 +3,7 @@ import { connect, Empty, StringCodec } from "nats";
 async function main() {
   // create a connection
   //   const nc = await connect({ servers: "demo.nats.io:4222" });
-  const nc = await connect({ servers: "localhost:4222" });
+  const nc = await connect({ servers: "localhost:4222", user: "userA", pass: "passA" });
 
   // create an encoder
   const sc = StringCodec();
